@@ -3,35 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VIDEO WORK — Ava M. Balliet</title>
+  <meta name="description" content="Ava M. Balliet — Video Production portfolio.">
+  <title>Video Production — Ava M. Balliet</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .placeholder {
-      max-width: 850px;
-      margin: 15vh auto;
-      padding: 0 30px;
-      text-align: center;
+    .video-page {
+      width: min(1000px, 100%);
+      margin: 0 auto;
+      padding: 80px 30px 100px;
     }
-    .placeholder h1 {
+    .page-heading { text-align: center; margin-bottom: 80px; }
+    .page-heading h1 {
       font-size: clamp(3rem, 7vw, 6rem);
+      margin-bottom: 18px;
     }
-    .placeholder p {
-      max-width: 600px;
-      margin: 35px auto;
+    .page-heading p {
+      margin: 0 auto;
+      max-width: 650px;
       color: var(--muted);
       line-height: 1.7;
+      font-size: .95rem;
     }
-    .placeholder a {
+    .section-title {
+      text-align: center;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      margin: 0 0 45px;
+      letter-spacing: -.02em;
+    }
+    .video-section { margin-bottom: 100px; }
+    .video-item {
+      width: min(800px, 100%);
+      margin: 0 auto 65px;
+    }
+    .video-info { margin-bottom: 12px; }
+    .video-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+    }
+    .video-description {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: .85rem;
+      line-height: 1.5;
+    }
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: 0;
+      display: block;
+      background: #000;
+    }
+    .local-video {
+      width: 100%;
+      display: block;
+      background: #000;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
       color: var(--accent);
       text-decoration: none;
+      font-size: .75rem;
+      letter-spacing: .08em;
+      margin-top: 20px;
+    }
+    @media (max-width: 700px) {
+      .video-page { padding: 55px 20px 70px; }
+      .page-heading { margin-bottom: 60px; }
+      .video-section { margin-bottom: 75px; }
+      .video-item { margin-bottom: 50px; }
     }
   </style>
 </head>
 <body>
-  <main class="placeholder">
-    <h1>VIDEO WORK</h1>
-    <p>This page is ready for films, editing, cinematography, school work, internship work, and personal projects.</p>
-    <p><a href="index.html">← BACK TO HOME</a></p>
+  <main class="video-page">
+    <header class="page-heading">
+      <h1>VIDEO PRODUCTION</h1>
+      <p>Some of my favorite videos that I have produced over the past 4 years.</p>
+    </header>
+
+    <section class="video-section">
+      <h2 class="section-title">PERSONAL</h2>
+
+      <article class="video-item">
+        <div class="video-info">
+          <h3 class="video-title">The Flowers Blooming</h3>
+          <p class="video-description">Sneak peek of the video I am currently editing.</p>
+        </div>
+        <video class="local-video" controls playsinline preload="metadata">
+          <source src="the-flowers-blooming.mp4" type="video/mp4">
+          Your browser does not support this video.
+        </video>
+      </article>
+
+      <article class="video-item">
+        <div class="video-info"><h3 class="video-title">Camping</h3></div>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/eJOFHurX_dQ" title="Camping" allowfullscreen></iframe>
+      </article>
+
+      <article class="video-item">
+        <div class="video-info"><h3 class="video-title">Rope Swing</h3></div>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/r7780u4ycbs" title="Rope Swing" allowfullscreen></iframe>
+      </article>
+    </section>
+
+    <section class="video-section">
+      <h2 class="section-title">SCHOOL</h2>
+
+      <article class="video-item">
+        <div class="video-info"><h3 class="video-title">OhHowSweetAndLovely</h3></div>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/i-kS--DQYMM" title="OhHowSweetAndLovely" allowfullscreen></iframe>
+      </article>
+
+      <article class="video-item">
+        <div class="video-info"><h3 class="video-title">Excuse By: B3AN13</h3></div>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/8yKnjvHj-bg" title="Excuse By: B3AN13" allowfullscreen></iframe>
+      </article>
+
+      <article class="video-item">
+        <div class="video-info"><h3 class="video-title">Twilight Recreation Scene</h3></div>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/y1vjLUBy67o" title="Twilight Recreation Scene" allowfullscreen></iframe>
+      </article>
+    </section>
+
+    <section class="video-section">
+      <h2 class="section-title">INTERNSHIP</h2>
+
+      <article class="video-item">
+        <div class="video-info">
+          <h3 class="video-title">Podcast Production</h3>
+          <p class="video-description">Podcast production intern for Laura DiFrancesco during spring 2026. Here is one of the many episodes I produced.</p>
+        </div>
+        <iframe class="video-frame" src="https://www.youtube.com/embed/XyNkjgz31Io" title="Podcast production episode" allowfullscreen></iframe>
+      </article>
+    </section>
+
+    <a class="back-link" href="index.html">← BACK TO HOME</a>
   </main>
 </body>
 </html>
