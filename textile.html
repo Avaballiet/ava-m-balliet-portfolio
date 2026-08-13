@@ -3,13 +3,269 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TEXTILE AND TANGIBLE WORK — Ava M. Balliet</title>
+  <title>TEXTILE WORK — Ava M. Balliet</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .textile-page {
+      width: min(1320px, 100%);
+      margin: 0 auto;
+      padding: 70px 42px 90px;
+    }
+
+    .textile-header {
+      max-width: 850px;
+      margin: 0 auto 85px;
+      text-align: center;
+    }
+
+    .textile-header h1,
+    .progress-header h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      letter-spacing: -.035em;
+    }
+
+    .textile-header h1 {
+      margin: 0 0 24px;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: .95;
+    }
+
+    .textile-header p,
+    .progress-header p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: .76rem;
+      letter-spacing: .08em;
+    }
+
+    .back-link:hover,
+    .back-link:focus-visible {
+      color: var(--text);
+    }
+
+    .finished-gallery {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-auto-rows: 58px;
+      column-gap: 34px;
+      row-gap: 76px;
+      align-items: start;
+      margin-bottom: 120px;
+    }
+
+    .textile-photo {
+      position: relative;
+      min-width: 0;
+      z-index: 1;
+    }
+
+    .textile-photo img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 0;
+      transition: transform 240ms ease, box-shadow 240ms ease;
+      transform-origin: center center;
+    }
+
+    .textile-photo:hover,
+    .textile-photo:focus-within {
+      z-index: 20;
+    }
+
+    .textile-photo:hover img,
+    .textile-photo:focus-within img {
+      transform: scale(1.055);
+      box-shadow: 0 18px 45px rgba(41, 39, 51, .14);
+    }
+
+    .photo-1 { grid-column: 1 / span 3; grid-row: 1 / span 6; margin-top: 8px; }
+    .photo-2 { grid-column: 5 / span 3; grid-row: 2 / span 6; margin-top: 34px; }
+    .photo-3 { grid-column: 9 / span 4; grid-row: 1 / span 5; margin-top: 0; }
+    .photo-4 { grid-column: 8 / span 3; grid-row: 7 / span 5; margin-top: 18px; }
+    .photo-5 { grid-column: 1 / span 5; grid-row: 9 / span 6; margin-top: 22px; }
+    .photo-6 { grid-column: 6 / span 4; grid-row: 13 / span 6; margin-top: 12px; }
+    .photo-7 { grid-column: 10 / span 3; grid-row: 13 / span 6; margin-top: 52px; }
+    .photo-8 { grid-column: 2 / span 3; grid-row: 16 / span 6; margin-top: 18px; }
+
+    .progress-section {
+      border-top: 1px solid var(--line);
+      padding-top: 72px;
+    }
+
+    .progress-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .progress-header h2 {
+      margin: 0 0 20px;
+      font-size: clamp(2.3rem, 5vw, 4.8rem);
+      line-height: 1;
+    }
+
+    .progress-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(55px, 9vw, 130px);
+      align-items: start;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .progress-project {
+      text-align: center;
+    }
+
+    .progress-project img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+      transition: transform 240ms ease, box-shadow 240ms ease;
+    }
+
+    .progress-project:hover img,
+    .progress-project:focus-within img {
+      transform: scale(1.035);
+      box-shadow: 0 18px 45px rgba(41, 39, 51, .14);
+    }
+
+    .progress-project h3 {
+      margin: 22px 0 8px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+    }
+
+    .progress-project p {
+      margin: 0;
+      color: var(--muted);
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 900px) {
+      .textile-page { padding: 55px 24px 70px; }
+      .textile-header { margin-bottom: 65px; }
+      .finished-gallery {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        column-gap: 24px;
+        row-gap: 54px;
+        grid-auto-rows: 55px;
+        margin-bottom: 90px;
+      }
+      .photo-1 { grid-column: 1 / span 2; grid-row: 1 / span 6; }
+      .photo-2 { grid-column: 4 / span 3; grid-row: 2 / span 6; margin-top: 25px; }
+      .photo-3 { grid-column: 3 / span 3; grid-row: 8 / span 5; }
+      .photo-4 { grid-column: 1 / span 2; grid-row: 14 / span 5; }
+      .photo-5 { grid-column: 3 / span 4; grid-row: 15 / span 6; }
+      .photo-6 { grid-column: 1 / span 3; grid-row: 22 / span 6; }
+      .photo-7 { grid-column: 5 / span 2; grid-row: 22 / span 6; margin-top: 30px; }
+      .photo-8 { grid-column: 2 / span 2; grid-row: 29 / span 6; }
+    }
+
+    @media (max-width: 650px) {
+      .textile-page { padding: 40px 18px 60px; }
+      .textile-header { margin-bottom: 50px; }
+      .textile-header h1 { font-size: clamp(2.8rem, 14vw, 4.8rem); }
+      .finished-gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+        gap: 42px;
+        margin-bottom: 75px;
+      }
+      .textile-photo,
+      .photo-1, .photo-2, .photo-3, .photo-4,
+      .photo-5, .photo-6, .photo-7, .photo-8 {
+        grid-column: auto;
+        grid-row: auto;
+        margin-top: 0;
+      }
+      .textile-photo:nth-child(even) { width: 82%; margin-left: auto; }
+      .textile-photo:nth-child(3n) { width: 90%; margin-left: 4%; }
+      .progress-section { padding-top: 55px; }
+      .progress-grid { grid-template-columns: 1fr; gap: 65px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .textile-photo img,
+      .progress-project img { transition: none; }
+      .textile-photo:hover img,
+      .textile-photo:focus-within img,
+      .progress-project:hover img,
+      .progress-project:focus-within img { transform: none; }
+    }
+  </style>
 </head>
 <body>
-  <main style="max-width:850px;margin:15vh auto;padding:0 30px;text-align:center;">
-    <h1 style="font-family:Georgia,'Times New Roman',serif;font-weight:400;">TEXTILE AND TANGIBLE WORK</h1>
-    <p><a href="index.html" style="color:var(--accent);text-decoration:none;">← BACK TO HOME</a></p>
+  <main class="textile-page">
+    <header class="textile-header">
+      <h1>TEXTILE WORK</h1>
+      <p>After learning how to crochet in 2021, I have worked on more projects than I can count. Here are some of my favorites.</p>
+      <a class="back-link" href="index.html">← BACK TO HOME</a>
+    </header>
+
+    <section class="finished-gallery" aria-label="Finished textile projects">
+      <figure class="textile-photo photo-1">
+        <img src="IMG_3901.jpg" alt="Brown crocheted portfolio case held outdoors" loading="eager">
+      </figure>
+      <figure class="textile-photo photo-2">
+        <img src="IMG_3909.jpg" alt="Gray crocheted shoulder bag" loading="lazy">
+      </figure>
+      <figure class="textile-photo photo-3">
+        <img src="IMG_3906.jpg" alt="Fuzzy orange and red crocheted top" loading="lazy">
+      </figure>
+      <figure class="textile-photo photo-4">
+        <img src="IMG_3905.jpg" alt="Bright yellow crocheted shorts" loading="lazy">
+      </figure>
+      <figure class="textile-photo photo-5">
+        <img src="IMG_3895.jpg" alt="Pastel crocheted patchwork blanket on a bed" loading="lazy">
+      </figure>
+      <figure class="textile-photo photo-6">
+        <img src="IMG_3898.jpg" alt="Pastel crocheted patchwork blanket outdoors on grass" loading="lazy">
+      </figure>
+      <figure class="textile-photo photo-7">
+        <img src="72645606785__802BEFBF-F6C7-47D4-A3E2-0997935F55E8.jpg" alt="Crocheted striped arm warmers being modeled" loading="lazy">
+      </figure>
+      <figure class="textile-photo photo-8">
+        <img src="IMG_1826.jpg" alt="Green and lavender striped crocheted balaclava being modeled" loading="lazy">
+      </figure>
+    </section>
+
+    <section class="progress-section" aria-labelledby="progress-title">
+      <header class="progress-header">
+        <h2 id="progress-title">WORK IN PROGRESS</h2>
+        <p>I’m always working on something new. Here are a few projects I’m currently working on.</p>
+      </header>
+
+      <div class="progress-grid">
+        <article class="progress-project">
+          <img src="IMG_3907.jpg" alt="Deep red granny square purse in progress" loading="lazy">
+          <h3>Granny Square Purse</h3>
+          <p>Working on the strap and lining!</p>
+        </article>
+        <article class="progress-project">
+          <img src="IMG_3924.jpg" alt="Cream to orange ombre halter top dress in progress" loading="lazy">
+          <h3>Halter Top Dress</h3>
+          <p>Adding length and adjusting the fit.</p>
+        </article>
+      </div>
+    </section>
   </main>
 </body>
 </html>
