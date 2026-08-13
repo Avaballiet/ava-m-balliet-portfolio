@@ -30,8 +30,9 @@
       font-size: 1rem;
     }
     .back-link {
-      display: inline-block;
-      margin-top: 0;
+      display: block;
+      width: fit-content;
+      margin: 34px auto 0;
       color: var(--accent);
       text-decoration: none;
       font-size: .76rem;
@@ -40,23 +41,32 @@
     .back-link:hover,
     .back-link:focus-visible { color: var(--text); }
     .photo-gallery {
-      column-count: 3;
-      column-gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-auto-flow: dense;
+      gap: 14px;
+      align-items: start;
     }
     .photo-tile {
-      break-inside: avoid;
-      margin: 0 0 10px;
+      margin: 0;
       position: relative;
       overflow: hidden;
       cursor: zoom-in;
       background: var(--line);
     }
-    .photo-tile img {
+    .photo-tile.feature { grid-column: span 2; }
+    .photo-tile.wide { grid-column: span 2; }
+        .photo-tile img {
       display: block;
       width: 100%;
       height: auto;
-      transition: transform 220ms ease;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform 260ms ease;
     }
+    .photo-tile.wide img { aspect-ratio: 3 / 2; }
+    .photo-tile.feature img { aspect-ratio: 16 / 10; }
+    .photo-tile.tall img { aspect-ratio: 3 / 4; }
     .photo-tile:hover img,
     .photo-tile:focus-visible img { transform: scale(1.015); }
     .photo-tile button {
@@ -99,13 +109,15 @@
     }
     @media (max-width: 900px) {
       .photography-page { padding: 55px 24px 70px; }
-      .photo-gallery { column-count: 2; }
+      .photo-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .photo-tile.feature, .photo-tile.wide { grid-column: span 2; }
     }
     @media (max-width: 650px) {
       .photography-page { padding: 40px 18px 60px; }
       .photography-header { margin-bottom: 42px; }
-      .photo-gallery { column-count: 1; }
-      .photo-tile { margin-bottom: 10px; }
+      .photo-gallery { grid-template-columns: 1fr; gap: 10px; }
+      .photo-tile.feature, .photo-tile.wide, .photo-tile.tall { grid-column: span 1; grid-row: auto; }
+      .photo-tile img, .photo-tile.wide img, .photo-tile.feature img, .photo-tile.tall img { aspect-ratio: 4 / 3; }
     }
     @media (prefers-reduced-motion: reduce) {
       .photo-tile img { transition: none; }
@@ -120,29 +132,29 @@
     </header>
 
     <section class="photo-gallery" aria-label="Photography gallery">
-      <figure class="photo-tile"><button type="button"><img src="photo-01.jpg" alt="Photography portfolio image" loading="eager"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-02.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile feature"><button type="button"><img src="photo-01.jpg" alt="Photography portfolio image" loading="eager"></button></figure>
+      <figure class="photo-tile wide"><button type="button"><img src="photo-04.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile tall"><button type="button"><img src="photo-15.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
       <figure class="photo-tile"><button type="button"><img src="photo-03.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-04.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-05.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-06.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-07.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-08.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-09.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-10.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile wide"><button type="button"><img src="photo-05.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
       <figure class="photo-tile"><button type="button"><img src="photo-11.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-12.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-13.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-14.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-15.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile tall"><button type="button"><img src="photo-21.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile feature"><button type="button"><img src="photo-13.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
       <figure class="photo-tile"><button type="button"><img src="photo-16.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-17.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-18.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile wide"><button type="button"><img src="photo-07.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
       <figure class="photo-tile"><button type="button"><img src="photo-19.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile tall"><button type="button"><img src="photo-10.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile wide"><button type="button"><img src="photo-06.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photo-12.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile feature"><button type="button"><img src="photo-22.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photo-08.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile wide"><button type="button"><img src="photo-09.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile tall"><button type="button"><img src="photo-17.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
       <figure class="photo-tile"><button type="button"><img src="photo-20.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-21.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
-      <figure class="photo-tile"><button type="button"><img src="photo-22.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile wide"><button type="button"><img src="photo-14.jpg" alt="Photography portfolio image" loading="lazy"></button></figure>
     </section>
+
+    <a class="back-link" href="index.html">← BACK TO HOME</a>
   </main>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
