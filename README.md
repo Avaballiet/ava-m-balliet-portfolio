@@ -1,22 +1,17 @@
-# Ava M. Balliet Portfolio
+# Ava M. Balliet — Multimedia Portfolio
 
-A self-contained static portfolio site built with HTML, CSS, and JavaScript.
+Static HTML/CSS/JavaScript portfolio ready for GitHub Pages.
 
-## Current update
-- Warm three-color palette: warm cream, terracotta, and espresso brown.
-- Cover page now uses **TEXTILE WORK** as the section name.
-- Photography page title is **PHOTOGRAPHY**.
-- Photography subtitle: “All photos were taken on a Canon SX530 HS within the past three years!”
-- Photography gallery contains the complete set of 22 supplied photographs.
-- Gallery uses a dense, puzzle-like mosaic with only a 2px gutter and click-to-enlarge lightbox behavior.
-- Responsive navigation and mobile layout included.
+## Contents
+- 22 photography images
+- 11 textile work images
+- Video production page with local video + YouTube embeds
+- Food Media, Miscellaneous, and About Me pages
 
-## Open locally
-Open `index.html` in a browser.
+## GitHub Pages
+1. Upload the contents of this folder to the root of your GitHub repository.
+2. In GitHub, open **Settings → Pages**.
+3. Choose **Deploy from a branch**, select your main branch, and choose `/ (root)`.
+4. Save and wait for GitHub Pages to publish the site.
 
-## Pages
-- `index.html` — cover page
-- `textile-work.html` — textile work
-- `photography.html` — photography gallery
-- `about.html` — about
-- `contact.html` — contact
+No build step is required.

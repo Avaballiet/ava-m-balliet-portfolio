@@ -3,13 +3,181 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ava M. Balliet — Photography portfolio.">
   <title>PHOTOGRAPHY — Ava M. Balliet</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .photography-page {
+      width: min(1400px, 100%);
+      margin: 0 auto;
+      padding: 70px 42px 90px;
+    }
+    .photography-header {
+      max-width: 900px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+    .photography-header h1 {
+      margin: 0 0 18px;
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      line-height: .95;
+    }
+    .photography-header p {
+      margin: 0 auto;
+      max-width: 720px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 0;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: .76rem;
+      letter-spacing: .08em;
+    }
+    .back-link:hover,
+    .back-link:focus-visible { color: var(--text); }
+    .photo-gallery {
+      column-count: 3;
+      column-gap: 10px;
+    }
+    .photo-tile {
+      break-inside: avoid;
+      margin: 0 0 10px;
+      position: relative;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: var(--line);
+    }
+    .photo-tile img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform 220ms ease;
+    }
+    .photo-tile:hover img,
+    .photo-tile:focus-visible img { transform: scale(1.015); }
+    .photo-tile button {
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      background: transparent;
+      cursor: zoom-in;
+    }
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 5vw;
+      background: rgba(55, 31, 22, .92);
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 25px;
+      color: #fff8ef;
+      background: transparent;
+      border: 0;
+      font-size: 44px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    @media (max-width: 900px) {
+      .photography-page { padding: 55px 24px 70px; }
+      .photo-gallery { column-count: 2; }
+    }
+    @media (max-width: 650px) {
+      .photography-page { padding: 40px 18px 60px; }
+      .photography-header { margin-bottom: 42px; }
+      .photo-gallery { column-count: 1; }
+      .photo-tile { margin-bottom: 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .photo-tile img { transition: none; }
+    }
+  </style>
 </head>
 <body>
-  <main style="max-width:850px;margin:15vh auto;padding:0 30px;text-align:center;">
-    <h1 style="font-family:Georgia,'Times New Roman',serif;font-weight:400;">PHOTOGRAPHY</h1>
-    <p><a href="index.html" style="color:var(--accent);text-decoration:none;">← BACK TO HOME</a></p>
+  <main class="photography-page">
+    <header class="photography-header">
+      <h1>PHOTOGRAPHY</h1>
+      <p>All photos were taken on a Canon SX530 HS within the past three years!</p>
+    </header>
+
+    <section class="photo-gallery" aria-label="Photography gallery">
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_6003.JPG" alt="Photography portfolio image" loading="eager"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_5996.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_5769.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_5737.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_5727.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_5685.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_5682.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/Addy Bed.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/Austria.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/Austria2.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_6016.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_6013.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_4879.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_4866.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_4858.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_4832.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_4815.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_4733.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_4734.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_4703.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/IMG_4670.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+      <figure class="photo-tile"><button type="button"><img src="photography-assets/camp.JPG" alt="Photography portfolio image" loading="lazy"></button></figure>
+    </section>
   </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+    <img id="lightbox-image" src="" alt="">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image');
+    const closeButton = document.querySelector('.lightbox-close');
+
+    document.querySelectorAll('.photo-tile button').forEach((button) => {
+      button.addEventListener('click', () => {
+        const image = button.querySelector('img');
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImage.src = '';
+    }
+
+    closeButton.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>

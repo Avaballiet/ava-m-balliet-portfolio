@@ -1,9 +1,9 @@
 :root {
-  --background: #eee8f7;
-  --text: #292733;
-  --muted: #716b7d;
-  --accent: #8d78ae;
-  --line: #cfc5df;
+  --background: #f3e7d7;
+  --text: #3d2923;
+  --muted: #765a4d;
+  --accent: #b85c3b;
+  --line: #d9b8a5;
 }
 * { box-sizing: border-box; }
 html { min-height: 100%; }
