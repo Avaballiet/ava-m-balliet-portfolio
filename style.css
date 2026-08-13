@@ -111,15 +111,15 @@ h1 {
 .category {
   position: relative;
   display: grid;
-  grid-template-columns: 58px minmax(0, 1fr) minmax(220px, 0.7fr);
+  grid-template-columns: 1fr;
   align-items: center;
-  gap: 20px;
-  min-height: 86px;
-  padding: 18px 8px;
+  gap: 0;
+  min-height: 108px;
+  padding: 20px 24px;
   border-bottom: 1px solid var(--line);
   text-decoration: none;
   overflow: hidden;
-  transition: padding 240ms ease, background 240ms ease;
+  transition: background 240ms ease, padding 240ms ease;
 }
 
 .category::before {
@@ -139,8 +139,8 @@ h1 {
 
 .category:hover,
 .category:focus-visible {
-  padding-left: 18px;
-  padding-right: 18px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .category:hover::before,
@@ -161,11 +161,13 @@ h1 {
 }
 
 .category-description {
+  max-width: 520px;
+  margin-top: 8px;
   color: var(--muted);
   font-size: 0.82rem;
   line-height: 1.5;
   opacity: 0;
-  transform: translateX(12px);
+  transform: translateY(-5px);
   transition: opacity 220ms ease, transform 220ms ease;
 }
 
@@ -200,16 +202,12 @@ h1 {
   }
 
   .category {
-    grid-template-columns: 38px 1fr;
-    min-height: 76px;
+    min-height: 96px;
   }
 
   .category-description {
-    grid-column: 2;
-    margin-top: -8px;
     opacity: 1;
     transform: none;
-    font-size: 0.78rem;
   }
 
   .footer {
